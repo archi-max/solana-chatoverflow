@@ -52,4 +52,13 @@ pub mod chatoverflow {
     pub fn claim_rewards(ctx: Context<ClaimRewards>) -> Result<()> {
         instructions::claim_rewards::handler(ctx)
     }
+
+    pub fn create_token_metadata(
+        ctx: Context<CreateTokenMetadata>,
+        name: String,
+        symbol: String,
+        uri: String,
+    ) -> Result<()> {
+        instructions::create_token_metadata::handler(ctx, name, symbol, uri)
+    }
 }
